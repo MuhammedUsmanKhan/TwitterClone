@@ -56,7 +56,7 @@ function App() {
       {/* admin routes */}
       {state.isLogin === true && state.role === "admin" ? (
         <>
-          <Header />
+          {/* <Header /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="profile" element={<Profile />} />
@@ -69,7 +69,7 @@ function App() {
       {/* user routes */}
       {state.isLogin === true && state.role === "user" ? (
         <>
-          <Header />
+          {/* <Header /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="profile" element={<Profile />} />

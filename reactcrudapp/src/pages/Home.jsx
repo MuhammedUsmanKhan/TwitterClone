@@ -65,48 +65,51 @@ const Home = () => {
     }, [textArea]);
 
     return (
-        <div className='flex h-screen w-full'>
-            <div className='h-full bg-black w-[22%] text-white'>
-                <Sidebar />
-            </div>
-            <div className='flex flex-col bg-black border border-y-0 border-l-[#1f2124] border-r-[#1f2124] w-2/4'>
+        <div className='flex justify-center bg-black'>
+            <div className='flex h-screen max-w-[85rem]'>
+                <div className='h-full bg-black w-[22%] text-white'>
+                    <Sidebar />
+                </div>
+                <div className='flex flex-col bg-black border border-y-0 border-l-[#1f2124] border-r-[#1f2124] w-2/4'>
 
-                <div className=' flex justify-center space-x-2 pt-4 pb-4 w-full border border-[#1f2124] '>
-                    <div className="w-11">
-                        <img src={prof} className="  rounded-full" />
-                    </div>
-                    <div className=' w-[80%] '>
-                        <div className=' w-full '>
-                            <textarea
-                                rows='2'
-                                // value={textArea}
-                                placeholder='What is happening ?!'
-                                ref={textAreaRef}
-                                className='placeholder:text-xl pb-1 outline-none w-full  resize-none bg-black text-white '
-                                onChange={handleChange}
-                                onClick={showDummyDivBelowTextArea}
-                            >
-                            </textarea>
-                            {/* <div className='absolute top-1/2 border left-2 transform  -translate-y-1/2 pointer-events-none text-white'>
+                    <div className=' flex justify-center space-x-2 pt-4 pb-4 w-full border border-[#1f2124] '>
+                        <div className="w-11">
+                            <img src={prof} className="  rounded-full" />
+                        </div>
+                        <div className=' w-[80%] '>
+                            <div className=' w-full '>
+                                <textarea
+                                    rows='2'
+                                    // value={textArea}
+                                    placeholder='What is happening ?!'
+                                    ref={textAreaRef}
+                                    className='placeholder:text-xl pb-1 outline-none w-full  resize-none bg-black text-white '
+                                    onChange={handleChange}
+                                    onClick={showDummyDivBelowTextArea}
+                                >
+                                </textarea>
+                                {/* <div className='absolute top-1/2 border left-2 transform  -translate-y-1/2 pointer-events-none text-white'>
                                 What is happening ?!
                             </div> */}
-                            <div>
+                                <div>
 
+                                </div>
                             </div>
+                            <div></div>
                         </div>
-                        <div></div>
+                    </div>
+                    <div>
+                        {Posts.map((eachpost, index) => {
+                            return <Postcard key={index} postDetails={eachpost} />
+                        })}
                     </div>
                 </div>
-                <div>
-                    {Posts.map((eachpost, index) => {
-                        return <Postcard key={index} postDetails={eachpost} />
-                    })}
+                <div className='flex flex-col items-center bg-black w-[28%] space-y-4'>
+                    <RightSidebar />
                 </div>
             </div>
-            <div className='flex flex-col items-center bg-black w-[28%] space-y-4'>
-                <RightSidebar />
-            </div>
         </div>
+
 
     );
 }

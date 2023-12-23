@@ -4,6 +4,10 @@ import axios from 'axios'
 import Createcard from '../../components/createcard/card'
 import Postcard from '../../components/postcard/postcard'
 import Search from "../../components/searchpost/searchpost";
+import Sidebar from '../../components/sidebar/sidebar';
+import RightSidebar from '../../components/rightSidebar/rightSidebar';
+import Userprof from '../../components/userprof/Userprof';
+import prof from '../../images/my img.png'
 import { baseUrl } from "../../core";
 const Profile = () => {
 
@@ -183,11 +187,31 @@ const Profile = () => {
     };
 
     return (
-        <div className=''>
-            {/* <div className='flex justify-center text-4xl  p-4'>
+        <div className="flex justify-center bg-black">
+            <div className='flex h-screen max-w-[85rem]'>
+                <div className='h-full bg-black w-[22%] text-white'>
+                    <Sidebar />
+                </div>
+                <div className='flex flex-col bg-black text-white border border-y-0 border-l-[#1f2124] border-r-[#1f2124] w-2/4'>
+                    <Userprof />
+                </div>
+                <div className='flex flex-col items-center bg-black w-[28%] space-y-4'>
+                    <RightSidebar />
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Profile;
+
+
+
+{/* open it <div className=''> */ }
+{/* <div className='flex justify-center text-4xl  p-4'>
                 <h1 className=''>React ExpressServer Based CrudApp</h1>
             </div> */}
-            <div className='container  mx-auto flex flex-col space-y-4'>
+{/* open it <div className='container  mx-auto flex flex-col space-y-4'>
                 <div className='flex justify-center '>
                     <Createcard createPost={addNewPost} createopenModal={createopenModal} setIsMessage={setIsMessage} />
                 </div>
@@ -200,27 +224,21 @@ const Profile = () => {
                         return <Postcard key={index} postDetails={eachpost} inpeditPost={inpeditPost} verifydelPost={verifydelPost} />;
                     })}
                 </div>
-            </div>
-            <Modal isDelete={isDelete} postid={postid} Message={Message} edittedpostHeadingRef={edittedpostHeadingRef} edittedpostDetailsRef={edittedpostDetailsRef} isUpdate={isUpdate} isCreate={isCreate} deletePost={deletePost} editPost={editPost} deletecloseModal={deletecloseModal} updatecloseModal={updatecloseModal} createcloseModal={createcloseModal}  > </Modal>
-            {/* <Search isSearchdetails={isSearchdetails} setiIsSearchdetails={setiIsSearchdetails} >
+            </div> */}
+{/* open it <Modal isDelete={isDelete} postid={postid} Message={Message} edittedpostHeadingRef={edittedpostHeadingRef} edittedpostDetailsRef={edittedpostDetailsRef} isUpdate={isUpdate} isCreate={isCreate} deletePost={deletePost} editPost={editPost} deletecloseModal={deletecloseModal} updatecloseModal={updatecloseModal} createcloseModal={createcloseModal}  > </Modal> */ }
+{/* <Search isSearchdetails={isSearchdetails} setiIsSearchdetails={setiIsSearchdetails} >
                 {isRelevantPosts?.map((eachpost, index) => {
                     return <Postcard key={index} postDetails={eachpost} inpeditPost={inpeditPost} verifydelPost={verifydelPost} />;
                 })}
             </Search> */}
-            {/* <Search  /> */}
-            {/* <Search isRelevantPosts={isRelevantPosts} isSearchdetails={isSearchdetails} setiIsSearchdetails={setiIsSearchdetails} inpeditPost={inpeditPost} verifydelPost={verifydelPost} />; */}
-            {/* <Modal isCreate={isCreate} >
+{/* <Search  /> */ }
+{/* <Search isRelevantPosts={isRelevantPosts} isSearchdetails={isSearchdetails} setiIsSearchdetails={setiIsSearchdetails} inpeditPost={inpeditPost} verifydelPost={verifydelPost} />; */ }
+{/* <Modal isCreate={isCreate} >
                 <h1 className="text-2xl mb-4">Are you sure to Delete</h1>
             </Modal> */}
-            <Search isSearchdetails={isSearchdetails} setiIsSearchdetails={setiIsSearchdetails} >
+{/* open it <Search isSearchdetails={isSearchdetails} setiIsSearchdetails={setiIsSearchdetails} >
                 {isRelevantPosts?.map((eachpost, index) => {
                     return <div><Postcard key={index} postDetails={eachpost} inpeditPost={inpeditPost} verifydelPost={verifydelPost} /></div>;
                 })}
-            </Search>
-        </div >
-
-
-    );
-};
-
-export default Profile;
+            </Search> */}
+{/* </div > */ }
